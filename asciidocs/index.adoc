@@ -1,0 +1,16 @@
+= Zooverwaltung
+Hain Lukas
+
+== CLD
+
+[plantuml, cld, png, aling=left]
+----
+include::plantuml/cld.puml[]
+----
+
+== UCD
+
+[plantuml, ucd, png, aling=left]
+----
+include::plantuml/ucd.puml[]
+----
