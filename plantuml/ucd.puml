@@ -1,0 +1,14 @@
+@startuml
+skinparam actorStyle awesome
+left to right direction
+:Employee:
+:Manager:
+rectangle Zoo {
+    (feed animal)
+    (relocate animal)
+    (manage enclosure)
+}
+Employee -down- (feed animal)
+Manager -down- (relocate animal)
+Manager -down- (manage enclosure)
+@enduml
