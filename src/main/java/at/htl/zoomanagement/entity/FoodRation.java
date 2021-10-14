@@ -1,5 +1,8 @@
 package at.htl.zoomanagement.entity;
 
+import at.htl.zoomanagement.entity.Animal;
+import at.htl.zoomanagement.entity.Food;
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;

@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 
+@Table(name = "a")
 @Entity
 @XmlRootElement
 public class Animal {
