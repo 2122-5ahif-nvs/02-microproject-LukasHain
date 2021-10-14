@@ -1,14 +1,18 @@
 package at.htl.zoomanagement.entity;
 
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @XmlRootElement
+@Schema(description = "Enclosures containing some amount of animals")
 public class Enclosure {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Schema(required = true)
     private String name;
 
     public Enclosure() {

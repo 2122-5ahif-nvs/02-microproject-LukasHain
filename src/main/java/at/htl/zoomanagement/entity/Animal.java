@@ -1,22 +1,25 @@
 package at.htl.zoomanagement.entity;
 
 import at.htl.zoomanagement.repository.LocalDateAdapter;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 
-@Table(name = "a")
 @Entity
 @XmlRootElement
+@Schema(description = "Several animals in the zoo")
 public class Animal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Schema(required = true)
     private String name;
     @XmlJavaTypeAdapter(type=LocalDate.class, value= LocalDateAdapter.class)
     private LocalDate birthdate;
+    @Schema(required = true)
     private String species;
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Enclosure enclosure;

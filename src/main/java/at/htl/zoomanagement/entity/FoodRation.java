@@ -2,6 +2,7 @@ package at.htl.zoomanagement.entity;
 
 import at.htl.zoomanagement.entity.Animal;
 import at.htl.zoomanagement.entity.Food;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -9,15 +10,20 @@ import java.time.LocalDate;
 
 @Entity
 @XmlRootElement
+@Schema(description = "Documentation of feedings of animals")
 public class FoodRation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @Schema(required = true)
     private Food food;
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @Schema(required = true)
     private Animal animal;
+    @Schema(required = true)
     private double amount;
+    @Schema(required = true)
     private LocalDate date;
 
     public FoodRation() {
